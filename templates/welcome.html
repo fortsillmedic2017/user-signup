@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+
+<!-- added code from this page to nav section of layout -->
+{% block nav %}
+<h1>This is the Welcome Page</h1>
+<ul class="nav_ul">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Login</a></li>
+            <li><a href="/signup">Sign Up</a></li>
+            <li><a href="#">Welcome</a></li>
+            </ul>
+{% endblock nav %}
+
+<!-- added code from this page to content section of layout -->
+{% block content %}
+<h1>Welcome {{form.username.data}} !!!</h1>
+{% endblock content %}

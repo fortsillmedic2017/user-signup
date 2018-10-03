@@ -1,0 +1,29 @@
+.header_main {
+    text-align: center;
+}
+
+.nav_top {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.nav_ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav_ul li {
+    display: inline;
+    margin: 3%;
+}
+
+.nav_ul a {
+    display: inline-block padding:10px;
+}
+
+hr.style {
+    height: 12px;
+    border: 0;
+    box-shadow: inset 0 12px 12px -12px rgb(110, 15, 122);
+}

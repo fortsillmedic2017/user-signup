@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+<!-- added code from this page to nav section of layout -->
+{% block nav %}
+<h1>This is the Signup Page</h1>
+{% endblock nav %}
+
+
+<!-- added code from this page to content section of layout -->
+{% block content %}
+
+    <form action="/signup" method="POST"> <!--action is the url you send form inputs to, to be read {@app,route("/signup",methods=["POST"}-->
+        <table>                           
+            <tbody> 
+                <tr>
+                         {{ form.hidden_tag() }}  <!-- do'nt forget("MUST HAVE!!") to add this so can validate from forms.py-->
+                    <td>{{ form.username.label }}</td><!-- give the lable in form.py-->
+                    <td>{{ form.username }}<!-- gives lable input feild/box to fill in from form.py-->
+                        {% for error in form.username.errors %} <!--reads field-inputs in forms.py for errors-->
+                            <span style="color:red">{{ error }}</span><!--displays error next to input box (in red)-->
+                            
+                        {% endfor %}<!-- ends python code for username-->
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>{{ form.password.label }}</td>
+                    <td>{{ form.password }}
+                        {% for error in form.password.errors %}
+                            <span style="color:red">{{ error }}</span>
+                        {% endfor %}
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>{{ form.verify_password.label }}</td>
+                    <td>{{ form.verify_password }}
+                        {% for error in form.verify_password.errors %}
+                        <span style="color:red">{{ error }}</span>
+                        {% endfor %}
+                        </ul>
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>{{ form.email.label }}</td>
+                    <td>{{ form.email }}
+                        {% for error in form.email.errors %}
+                            <span style="color:red">{{ error }}</span>
+                        {% endfor %}
+                    </td>
+                </tr>
+            </tbody>
+        </table>  
+                <input type="submit">
+    </form>                
+<!--======= end of form =====================-->
+
+{% endblock content %}
