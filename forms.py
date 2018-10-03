@@ -2,7 +2,7 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, BooleanField, Form, TextField, TextAreaField, validators
 from wtforms.validators import DataRequired, Length, Email, EqualTo, InputRequired, Optional, Regexp
 
-#==========Signup Form for main.py  =========================>
+#========== inputs for Signup Form for main.py  =========================>
 class UserSignup(FlaskForm):
     username = StringField("Username", validators=[Length(
         min=3, max=20, message="That's not a valid username.")])
@@ -20,7 +20,7 @@ class UserSignup(FlaskForm):
     
     
     
-#==========Login Form for main.py  =========================>
+#==========in puts for Login Form for main.py  =========================>
 class UserLogin(FlaskForm):
     username = StringField("Username", validators=[InputRequired(),
                                                    Length(min=3, max=20)])
