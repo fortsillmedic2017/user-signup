@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block nav %}
+<h1>This is the login page</h1>
+{% endblock nav %}
+
+{% block content %}
+<p></p>
+<form action="/login" method="POST">
+        <table>
+            <tbody>
+                <tr>
+                       {{ form.hidden_tag() }}  <!-- do'nt forget("MUST HAVE!!") to add this so can validate from forms.py-->
+                    <td>{{ form.username.label }}</td><!-- give the lable in form.py-->
+                    <td>{{ form.username }}<!-- gives lable input feild/box to fill in from form.py-->
+                        {% for error in form.username.errors %} <!--reads field-inputs in forms.py for errors-->
+                            <span class ="errors">{{ error }}</span><!--displays error next to input box (in red)-->
+                            
+                        {% endfor %}<!-- ends python code for username-->
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>{{form.password.label}}</td>
+                    <td>{{form.password}}
+                        {% for errors in form.password.errors %}
+                            <span class = "errors">{{errors}}</span>
+                        {% endfor %}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p></p>
+        <input type="Submit" value="Login">
+      
+    </form>
+{% endblock content %}
+

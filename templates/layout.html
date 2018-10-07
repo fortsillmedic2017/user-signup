@@ -10,17 +10,27 @@
             <title>Flask</title>
         {% endif %}
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main3.css') }}">
+    <style>
+    .errors {color:red;}
+
+    </style>
     </head>
 <body>
 <header>
 
 <!--=============== Nav section==============--> 
-      <nav class="nav_top">
-        
+<nav class="nav_top">
+{% block nav %} {% endblock nav %}
+    <ul class="nav_ul">
+           <!-- <li><a href="#">Home</a></li>-->
+        <li><a href="/login">Login</a></li>
+        <li><a href="/signup">Sign Up</a></li>
+            <!--<li><a href="/welcome">Welcome</a></li>-->
+    </ul>
 <!-- ===========added code from templates linked to this layout page ====================-->
-            {% block nav %} {% endblock nav %}
-      </nav>
-  <hr class="style"> 
+</nav>
+
+<hr class="style"> 
 <!---============ Section section ===============--> 
   
 </header>

@@ -22,16 +22,28 @@ def signup():
     form = UserSignup()
 
     if form.validate_on_submit():
-        return render_template("welcome.html", form=form, title="Welcome")
-    return render_template("signup.html", form=form, title="Signup")
-  
+        return render_template("welcome.html", form=form, title="Welcome")# If all input is valid when you hit submit will go to "welcome.html"
+    return render_template("signup.html", form=form, title="Signup")# If any of input is not valid when you hit submit will go back to "signup.html"
+ 
+
+@app.route("/login",  methods=["GET", "POST"])
+def login():
+    form = UserLogin()
+    if form.validate_on_submit():
+        # If all input is valid when you hit submit will go to "welcome.html"
+        return render_template("home.html", form=form, title="Home")
+    # If any of input is not valid when you hit submit will go back to "signup.html
+    return render_template("login.html", form=form, title="Login")
+
+
+@app.route("/home")
+def home():
+    return render_template("home.html", title="Home Page")
+
 
 @app.route("/welcome")
 def welcome():
-    form = UserSignup()
-    if form.validate_on_submit():
-        return render_template("welcome.html", form=form, title="Welcome")
-    return render_template("signup.html", form=form, title="Signup")
-  
+    return render_template("signup.html", title="Signup Page")
+
 
 app.run()
