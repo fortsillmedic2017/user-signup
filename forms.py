@@ -8,7 +8,7 @@ from wtforms.validators import DataRequired, Length, Email, EqualTo, InputRequir
 class UserSignup(FlaskForm):
     username = StringField("Username", validators=[Length(
         min=3, max=20, message="That's not a valid username.")])
-
+   
     password = PasswordField("Password",
                              validators=[Length(min=3, max=20, message="That's not a valid password. Must have at lease 3 characters")])
 

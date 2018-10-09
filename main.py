@@ -38,12 +38,14 @@ def login():
 
 @app.route("/home")
 def home():
-    return render_template("home.html", title="Home Page")
+    form = UserLogin()
+    return render_template("home.html", title="Home Page", form=form)
 
 
 @app.route("/welcome")
 def welcome():
-    return render_template("signup.html", title="Signup Page")
+    form = UserSignup()
+    return render_template("signup.html", title="Signup Page", form= form)
 
 
 app.run()
